@@ -33,12 +33,20 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
-        console.log(vowelsArray[0
-        ])
-        console.log(eachWord[0])
+        // console.log(vowelsArray[0
+        // ])
+        // console.log(eachWord[0])
+       const qChecker = eachWord[eachWord.indexOf(vowelsArray[0])-1]
         if(vowelsArray[0] === eachWord[0]){
          return eachWord + "way"
+        }  else if (qChecker === "q") {
+          const secondVowel = vowelsArray[1]
+        const indexOfSecondVowel = eachWord.indexOf(secondVowel)
+        const beginOfWord = eachWord.slice(0, indexOfSecondVowel)
+        const endOfWord = eachWord.slice(indexOfSecondVowel)
+        return `${endOfWord}${beginOfWord}ay`
         }
+          
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
